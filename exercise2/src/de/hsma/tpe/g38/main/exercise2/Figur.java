@@ -13,7 +13,8 @@ public class Figur {
 	protected Figur(double flaeche){
 		this.flaeche = flaeche;
 	}
-	
+	 
+	 
 	/*
 	 * Gibt den Wert der Fläche zurück
 	 */
