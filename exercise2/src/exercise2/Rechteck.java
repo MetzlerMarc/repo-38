@@ -15,6 +15,6 @@ public class Rechteck extends Figur {
 		super(hoehe * breite);
 		this.hoehe = hoehe;
 		this.breite = breite;
+		
 	}
-
 }
