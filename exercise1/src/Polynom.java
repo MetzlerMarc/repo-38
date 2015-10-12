@@ -15,10 +15,6 @@
  * Die Indices beim Zugriff auf die Koeffizienten beginnen immer
  * bei {@literal 0}
  */
-
-import java.util.Arrays;
-import java.text.DecimalFormat;
-
 public class Polynom {
 
     /*
@@ -39,14 +35,7 @@ public class Polynom {
      *
      * @param a Koeffizienten des Polynoms
      */
-	private double koeffizienten[];
-	
-	public double[] getKoeffizienten() {
-		return koeffizienten;
-	}
-	
     public Polynom(double... a) {
-    	this.koeffizienten = a;
     }
 
     /**
@@ -54,7 +43,6 @@ public class Polynom {
      * 0 sind.
      */
     public Polynom() {
-    	this(0);
     }
 
     /**
@@ -64,13 +52,7 @@ public class Polynom {
      * @return Wert an der Stelle x
      */
     public double berechne(double x) {
-    	
-        double result = koeffizienten[0];
-        
-        for(int i = 1; i < koeffizienten.length; i++){
-        	result = result + (koeffizienten[i] * Math.pow(x , i));
-        }
-    	return result;
+        return 0.0;
     }
 
     /**
@@ -80,13 +62,7 @@ public class Polynom {
      * @return Ergebnis
      */
     public double[] calc(double[] xs) {
-        double result[] = new double[xs.length];
-        
-        for (int i = 0; i < xs.length; i++){
-        	result[i] = berechne(xs[i]); 
-        }
-    	
-    	return result;
+        return null;
     }
 
     /**
@@ -95,16 +71,7 @@ public class Polynom {
      * @return Grad des Polynoms, -1 für das Nullpolynom
      */
     public int getGrad() {
-    	
-    	int grad = -1;
-
-		for (int i = 0; i < koeffizienten.length; i++) {
-			if (koeffizienten[i] != 0) {
-				grad = i;
-			}
-		}
-		return grad;
-    }
+        return -1;    }
 
     /**
      * Liefert den n-ten Koeffizienten.
@@ -114,16 +81,16 @@ public class Polynom {
      *         Polynoms ist
      */
     public double getKoeffizient(int n) {
-        
-    	if (n < 0) {
-			throw new IllegalArgumentException("Index (zero based) must be greater than or equal to zero.");
-		}
+        return 0;
+    }
 
-		if (n <= getGrad()) {
-			return koeffizienten[n];
-		}
-
-		return 0;
+    /**
+     * Liefert die Koeffizienten dieses Polynoms.
+     *
+     * @return die Koeffizienten.
+     */
+    public double[] getKoeffizienten() {
+        return null;
     }
 
     /**
