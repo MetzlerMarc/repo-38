@@ -1,4 +1,4 @@
-package exercise2;
+package de.hsma.tpe.g38.main.exercise2;
 
 public class Gerade extends Figur {
 	

@@ -1,4 +1,4 @@
-package exercise2;
+package de.hsma.tpe.g38.main.exercise2;
 
 public class Rechteck extends Figur {
 
@@ -15,6 +15,5 @@ public class Rechteck extends Figur {
 		super(hoehe * breite);
 		this.hoehe = hoehe;
 		this.breite = breite;
-		
 	}
 }
