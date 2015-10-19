@@ -4,8 +4,10 @@ public class Anfuehrer extends Wesen {
 
 	protected double bonus;
 
-	public Anfuehrer(int leben, int schaden, int geschwindigkeit, double ruestung, double bonus) {
-		super(leben, schaden, geschwindigkeit, ruestung);
+	public Anfuehrer(double leben, double schaden, double geschwindigkeit, double ruestung, double preis, double bonus) {
+		super(leben, schaden, geschwindigkeit, ruestung, preis);
 		this.bonus = bonus;
 	}
+
+	
 }

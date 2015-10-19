@@ -2,18 +2,21 @@ package de.hsma.tpe.g38.main.exercise3;
 
 public class Wesen {
 
-	int leben;
-	int schaden;
-	int geschwindigkeit;
+	double leben;
+	double schaden;
+	double geschwindigkeit;
 	double ruestung;
+	double preis;
 
-	public Wesen(int leben, int schaden, int geschwindigkeit, double ruestung) {
+	public Wesen(double leben, double schaden, double geschwindigkeit, double ruestung, double preis) {
 		this.leben = leben;
 		this.schaden = schaden;
 		this.geschwindigkeit = geschwindigkeit;
 		this.ruestung = ruestung;
+		this.preis = preis;
 	}
-/*
+
+	/*
  * Methode attack muss noch bearbeitet werden!!
  */
 	public void attack() {

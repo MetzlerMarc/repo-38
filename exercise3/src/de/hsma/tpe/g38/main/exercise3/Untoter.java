@@ -2,9 +2,9 @@ package de.hsma.tpe.g38.main.exercise3;
 
 public class Untoter extends Wesen {
 
-	public Untoter(int leben, int schaden, int geschwindigkeit, double ruestung) {
+	public Untoter(double leben, double schaden, double geschwindigkeit, double ruestung, double preis) {
 
-		super(120, 16, 2, 0.30);
+		super(120, 16, 2, 0.30, 70);
 		
 	}
 }
