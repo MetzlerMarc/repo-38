@@ -13,9 +13,21 @@ public class Wesen {
 		this.geschwindigkeit = geschwindigkeit;
 		this.ruestung = ruestung;
 	}
+/*
+ * Methode attack muss noch bearbeitet werden!!
+ */
+	public void attack() {
 
-	public void atack() {
-		
 	}
-	
+
+/*
+ * Methode zur Überprüfung der Lebendigkeit des Wesens.
+ */
+	public void isLebendig(int leben) {
+		if (leben > 0) {
+			System.out.println("Wesen ist lebendig.");
+		} else {
+			System.out.println("Wesen ist tot.");
+		}
+	}
 }
