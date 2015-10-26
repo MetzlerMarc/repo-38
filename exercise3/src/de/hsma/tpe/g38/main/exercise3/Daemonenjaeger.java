@@ -1,16 +1,27 @@
 package de.hsma.tpe.g38.main.exercise3;
 
-public class Daemonenjaeger extends Anfuehrer {
+public class Daemonenjaeger extends Nachtelf implements Anfuehrer {
 
 	private double bonus = 3.0;
+	private int preis = 290;
+	private String beherrschtesElement = "Zauberstab";
 
-	public Daemonenjaeger(double leben, double schaden, double geschwindigkeit, double ruestung, double preis, double bonus) {
+	
+	public int getPreis() {
+		return preis;
+	}
 
-		super(leben, schaden, geschwindigkeit, ruestung, preis, bonus);
-		this.leben = 140 * bonus;
-		this.schaden = 40;
-		this.geschwindigkeit = 2;
-		this.ruestung = 0.40;
-		this.preis = 290;
+	public double getBonus() {
+		return bonus;
+	}
+
+	public String getBeherrschtesElement() {
+		return beherrschtesElement;
+	}
+
+	
+	public Daemonenjaeger(double leben, double schaden, double geschwindigkeit, double ruestung) {
+
+		super(leben, schaden, geschwindigkeit, ruestung);
 	}
 }
