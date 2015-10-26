@@ -4,9 +4,8 @@ public class Daemonenjaeger extends Nachtelf implements Anfuehrer {
 
 	private double bonus = 3.0;
 	private int preis = 290;
-	private String beherrschtesElement = "Zauberstab";
+	private String beherrschtesElement = "Wind";
 
-	
 	public int getPreis() {
 		return preis;
 	}
@@ -19,9 +18,8 @@ public class Daemonenjaeger extends Nachtelf implements Anfuehrer {
 		return beherrschtesElement;
 	}
 
-	
-	public Daemonenjaeger(double leben, double schaden, double geschwindigkeit, double ruestung) {
+	public Daemonenjaeger() {
 
-		super(leben, schaden, geschwindigkeit, ruestung);
+		super();
 	}
 }

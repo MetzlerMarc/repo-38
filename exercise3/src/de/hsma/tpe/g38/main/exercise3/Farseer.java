@@ -4,9 +4,8 @@ public class Farseer extends Ork implements Anfuehrer {
 
 	private double bonus = 1.2;
 	private int preis = 300;
-	private String beherrschtesElement = "Zauberstab";
-	
-	
+	private String beherrschtesElement = "Feuer";
+
 	public int getPreis() {
 		return preis;
 	}
@@ -19,9 +18,8 @@ public class Farseer extends Ork implements Anfuehrer {
 		return beherrschtesElement;
 	}
 
-	
-	public Farseer(double leben, double schaden, double geschwindigkeit, double ruestung) {
+	public Farseer() {
 
-		super(leben, schaden, geschwindigkeit, ruestung);
+		super();
 	}
 }

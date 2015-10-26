@@ -4,9 +4,8 @@ public class Lich extends Untoter implements Anfuehrer {
 
 	private double bonus = 2.3;
 	private int preis = 140;
-	private String beherrschtesElement = "Zauberstab";
+	private String beherrschtesElement = "Erde";
 
-	
 	public int getPreis() {
 		return preis;
 	}
@@ -18,10 +17,9 @@ public class Lich extends Untoter implements Anfuehrer {
 	public String getBeherrschtesElement() {
 		return beherrschtesElement;
 	}
-	
-	
-	public Lich(double leben, double schaden, double geschwindigkeit, double ruestung) {
 
-		super(leben, schaden, geschwindigkeit, ruestung);
+	public Lich() {
+
+		super();
 	}
 }
