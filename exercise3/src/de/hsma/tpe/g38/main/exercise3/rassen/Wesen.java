@@ -1,11 +1,14 @@
-package de.hsma.tpe.g38.main.exercise3;
+package de.hsma.tpe.g38.main.exercise3.rassen;
 
-public abstract class Wesen {
+import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Anfuehrer;
 
-	double leben;
-	double schaden;
-	double geschwindigkeit;
-	double ruestung;
+public class Wesen {
+
+	protected double leben;
+	protected double schaden;
+	protected double geschwindigkeit;
+	protected double ruestung;
+	protected int preis;
 
 	public double getLeben() {
 		return leben;
@@ -21,6 +24,10 @@ public abstract class Wesen {
 
 	public double getRuestung() {
 		return ruestung;
+	}
+
+	public int getPreis() {
+		return preis;
 	}
 
 	protected Wesen(double leben, double schaden, double geschwindigkeit, double ruestung) {
@@ -51,15 +58,16 @@ public abstract class Wesen {
 
 		wesen.leben = Math.max(wesen.leben - damage, 0);
 
-		return (double) damage;
+		return damage;
 	}
 
-	public void isLebendig(double leben) {
+	public boolean isLebendig() {
 
 		if (leben > 0) {
-			System.out.println("Wesen ist lebendig.");
+			return true;
 		} else {
-			System.out.println("Wesen ist tot.");
+			return false;
 		}
 	}
+
 }
