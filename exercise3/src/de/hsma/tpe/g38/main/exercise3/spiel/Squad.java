@@ -49,7 +49,7 @@ public class Squad {
 		return wesen.get(nummerWesen);
 	}
 
-	public boolean isAnfueherInSquad(Wesen wesen) {
+	public boolean isAnfuehrerInSquad(Wesen wesen) {
 		if (wesen instanceof Anfuehrer) {
 			for (Wesen w : this.wesen) {
 				if (w.getClass() == wesen.getClass()) {

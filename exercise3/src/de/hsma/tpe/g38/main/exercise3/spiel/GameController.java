@@ -2,10 +2,10 @@ package de.hsma.tpe.g38.main.exercise3.spiel;
 
 public class GameController {
 
-	private int runde;
+	private int round;
 
-	public int getRunde() {
-		return runde;
+	public int getRound() {
+		return round;
 	}
 
 	public static void main(String[] args) {
@@ -15,24 +15,24 @@ public class GameController {
 
 	public void runGame() {
 
-		Spieler spieler1 = Simulation.getSpieler1();
-		Spieler spieler2 = Simulation.getSpieler2();
+		Player player1 = Simulation.getPlayer1();
+		Player player2 = Simulation.getPlayer2();
 
-		while (spieler1.isGeschlagen() == false && spieler2.isGeschlagen() == false) {
+		while (player1.isDefeated() == false && player2.isDefeated() == false) {
 
-			runde++;
+			round++;
 
-			spieler1.attackiereSpieler(spieler2);
+			player1.attackPlayer(player2);
 
-			if (spieler2.isGeschlagen() == true) {
-				System.out.println("Spieler2 ist geschlagen. Spieler1 hat gewonnen ");
+			if (player2.isDefeated() == true) {
+				System.out.println("Spieler 2 hat keine lebendigen Wesen mehr. Spieler 1 hat gewonnen!");
 				break;
 			}
 
-			spieler2.attackiereSpieler(spieler1);
+			player2.attackPlayer(player1);
 
-			if (spieler1.isGeschlagen() == true) {
-				System.out.println("Spieler1 ist geschlagen. Spieler2 hat gewonnen ");
+			if (player1.isDefeated() == true) {
+				System.out.println("Spieler 1 hat keine lebendigen Wesen mehr. Spieler 2 hat gewonnen!");
 				break;
 			}
 		}

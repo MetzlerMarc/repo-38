@@ -10,31 +10,31 @@ import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Lich;
 
 public class Simulation {
 
-	public static Spieler getSpieler1() {
+	public static Player getPlayer1() {
 
-		Spieler spieler = new Spieler("Chris", "erstes Team");
-		spieler.kaufe(new Mensch());
-		spieler.kaufe(new Untoter());
-		spieler.kaufe(new Nachtelf());
-		spieler.kaufe(new Ork());
-		spieler.kaufe(new Mensch());
-		spieler.kaufe(new Untoter());
-		spieler.kaufe(new Nachtelf());
-		spieler.kaufe(new Lich());
-		return spieler;
+		Player player = new Player("Chris", "Die Zerstörer");
+		player.buy(new Mensch());
+		player.buy(new Untoter());
+		player.buy(new Nachtelf());
+		player.buy(new Ork());
+		player.buy(new Mensch());
+		player.buy(new Untoter());
+		player.buy(new Nachtelf());
+		player.buy(new Lich());
+		return player;
 	}
 
-	public static Spieler getSpieler2() {
+	public static Player getPlayer2() {
 
-		Spieler spieler = new Spieler("Simon", "zweites Team");
-		spieler.kaufe(new Mensch());
-		spieler.kaufe(new Untoter());
-		spieler.kaufe(new Nachtelf());
-		spieler.kaufe(new Ork());
-		spieler.kaufe(new Erzmagier());
-		spieler.kaufe(new Farseer());
+		Player player= new Player("Simon", "Die Vernichter");
+		player.buy(new Mensch());
+		player.buy(new Untoter());
+		player.buy(new Nachtelf());
+		player.buy(new Ork());
+		player.buy(new Erzmagier());
+		player.buy(new Farseer());
 
-		return spieler;
+		return player;
 	}
 
 }
