@@ -39,14 +39,14 @@ public class GameController {
 
 			round++;
 
-			player1.attackPlayer(player2);
+			player1.attack(player2);
 
 			if (player2.isDefeated() == true) {
 				System.out.println(player2.getName() + " hat keine lebendigen Wesen mehr. " + player1.getName() +  " hat gewonnen!");
 				break;
 			}
 
-			player2.attackPlayer(player1);
+			player2.attack(player1);
 
 			if (player1.isDefeated() == true) {
 				System.out.println(player1.getName() + " hat keine lebendigen Wesen mehr. " + player2.getName() +  " hat gewonnen!");

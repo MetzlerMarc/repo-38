@@ -76,15 +76,31 @@ public class Player {
 	 * dem Squad.
 	 */
 
-	public void attackPlayer(Player player) {
+	public void attack(Player attackedPlayer) {
 
-		Wesen randomWesen = player.getSquad().getRandomWesen();
+		Wesen attackingWesen = squad.getRandomWesen();
+		Wesen attackedWesen = attackedPlayer.getSquad().getRandomWesen();
 
-		squad.getRandomWesen().attack(randomWesen);
+		double doneDamage = attackingWesen.attack(attackedWesen);
 
-		if (randomWesen.isAlive() == false) {
-			player.getSquad().deleteWesen(randomWesen);
+		System.out.println(attackingWesen.getName());
+		System.out.println(" von " + this.name + " hat " + attackedWesen.getName());
+		System.out.println(" von " + attackedPlayer.getName() + " " + doneDamage + " Lebenspunkte abgezogen.");
+		System.out.println("\n");
+
+		// Check if the attacked Wesen died
+		if (attackedWesen.isAlive() == false) {
+
+			System.out.println(attackedWesen.getName());
+			System.out.println(" von " + attackedPlayer.getName() + " ist gestorben.");
+
+			attackedPlayer.getSquad().deleteWesen(attackedWesen);
+		} else {
+			System.out.println(attackedWesen.getName() + " von " + attackedPlayer.getName() + " hat jetzt "
+					+ attackedWesen.getLeben() + " Leben.");
 		}
+		System.out.println("\n\n\n");
+
 	}
 
 }
