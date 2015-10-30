@@ -5,7 +5,6 @@ import de.hsma.tpe.g38.main.exercise3.rassen.Nachtelf;
 import de.hsma.tpe.g38.main.exercise3.rassen.Ork;
 import de.hsma.tpe.g38.main.exercise3.rassen.Untoter;
 import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Erzmagier;
-import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Farseer;
 import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Lich;
 
 public class Simulation {
@@ -32,7 +31,7 @@ public class Simulation {
 		player.buy(new Nachtelf());
 		player.buy(new Ork());
 		player.buy(new Erzmagier());
-		player.buy(new Farseer());
+		player.buy(new Mensch());
 
 		return player;
 	}
