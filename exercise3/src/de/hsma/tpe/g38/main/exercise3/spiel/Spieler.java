@@ -7,23 +7,23 @@ import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Anfuehrer;
 
 public final class Spieler {
 
-	private static final Scanner scanner = Eingabe.getInstance();
+	private static final Scanner scanner = Scan.getInstance();
 
 	private final String name;
-	private int kontostand = 2000;
 	private final Squad squad;
+	private int geld = 2000;
 	private boolean isAktiv = false;
 
 	public String getName() {
 		return name;
 	}
 
-	public int getKontostand() {
-		return kontostand;
-	}
-
 	public Squad getSquad() {
 		return squad;
+	}
+
+	public int getGeld() {
+		return geld;
 	}
 
 	public boolean isAktiv() {
@@ -49,11 +49,11 @@ public final class Spieler {
 		super();
 
 		if (spielername == null) {
-			throw new IllegalArgumentException("Spielername must not be null.");
+			throw new IllegalArgumentException("Wichtig! Bitte Spielernamen eingeben.");
 		}
 
 		if (squadname == null) {
-			throw new IllegalArgumentException("Squadname must not be null.");
+			throw new IllegalArgumentException("Wichtig! Bitte Squadnamen eingeben.");
 		}
 
 		this.name = spielername;
@@ -67,11 +67,11 @@ public final class Spieler {
 		boolean squadFertig = false;
 
 		do {
-			System.out.println("Wähle einen Charakter:\n\n");
+			System.out.println("Wähle ein Wesen:\n\n");
 			System.out.println(WesenFactory.getWesenListe());
 			System.out.println("\n");
-			System.out.println("0. Team-Zusammenstellung abschließen\n\n");
-			System.out.println("Kontostand: " + kontostand + " E$\n\n");
+			System.out.println("0. Team fertig erstellt\n\n");
+			System.out.println("Elfendollar: " + geld + " E$\n\n");
 
 			System.out.println(toString());
 
@@ -86,7 +86,7 @@ public final class Spieler {
 					buy(wesen);
 				}
 			} catch (IllegalArgumentException e) {
-				System.err.println("Fehlerhafte Eingabe: Bitte nur die jeweilige Zahl eingeben.\n");
+				System.out.println("Falsch eingegeben. Bitte eine der genannten Zahlen eingeben.\n");
 			}
 
 		} while (squadFertig == false);
@@ -95,15 +95,13 @@ public final class Spieler {
 	public void buy(final Wesen wesen) {
 
 		if (wesen.isAnfuehrer() && squad.exists((Anfuehrer) wesen)) {
-			System.err.println("Der Anführer (" + wesen.getName() + ") wurde nicht zum Squad von " + this.name
-					+ " hinzugefügt. Nur 1 Anführer der jeweiligen Rasse erlaubt!\n");
+			System.out.println("Ein zweiter Anführer, wie (" + wesen.getName() + "), ist nicht erlaubt\n");
 		} else {
-			if (wesen.getPreis() <= kontostand) {
+			if (wesen.getPreis() <= geld) {
 				squad.addWesen(wesen);
-				kontostand = kontostand - wesen.getPreis();
+				geld = geld - wesen.getPreis();
 			} else {
-				System.err.println("Das Wesen (" + wesen.getName() + ") wurde nicht zum Squad von " + this.name
-						+ " hinzugefügt. Du besitzt nicht genügend Elfendollar, um es zu kaufen!\n");
+				System.out.println("Nicht genug Geld um (" + wesen.getName() + ") zu kaufen!\n");
 			}
 		}
 	}
@@ -119,19 +117,17 @@ public final class Spieler {
 
 		double erteilterSchaden = angreifendesWesen.attack(angegriffenesWesen);
 
-		System.out.println("Das Wesen " + angreifendesWesen.getName());
-		System.out.println(" von " + this.name + " hat dem Wesen " + angegriffenesWesen.getName());
-		System.out.println(" von " + angegriffenerSpieler.getName() + " " + erteilterSchaden + " Schaden zugefügt.");
-		System.out.println("\n");
+		System.out.println(angreifendesWesen.getName() + " von " + this.name + " hat " + angegriffenesWesen.getName());
+		System.out.println(" von " + angegriffenerSpieler.getName() + " " + erteilterSchaden + " abgezogen.\n");
 
 		if (angegriffenesWesen.isLebendig() == false) {
 
 			System.out.println("Das Wesen " + angegriffenesWesen.getName());
-			System.out.println(" von " + angegriffenerSpieler.getName() + " hat den Angriff nicht überlebt!");
+			System.out.println(" von " + angegriffenerSpieler.getName() + " ist gestorben.");
 
 			angegriffenerSpieler.getSquad().removeWesen(angegriffenesWesen);
 		} else {
-			System.out.println("Es hat nun noch " + angegriffenesWesen.getLeben() + " Leben.");
+			System.out.println("Es hat jetzt " + angegriffenesWesen.getLeben() + " Leben.");
 		}
 		System.out.println("\n----------------------------------");
 		System.out.println(toString());
@@ -140,7 +136,7 @@ public final class Spieler {
 	public boolean isDead() {
 
 		if (squad.hasWesen() == false) {
-			System.out.println(squad.getName() + "' von " + name + " ist geschlagen.\n");
+			System.out.println(squad.getName() + "' von " + name + " hat keine Wesen mehr.\n");
 			return true;
 		}
 		return false;
@@ -148,7 +144,7 @@ public final class Spieler {
 
 	@Override
 	public String toString() {
-		return "Spieler " + name + ", hat noch " + kontostand + " Elfendollar und tritt mit folgendem Squad an:\n"
+		return "Spieler " + name + ", besitzt immer noch " + geld + " Elfendollar. Sein Squad besteht aus: \n"
 				+ squad.toString();
 	}
 

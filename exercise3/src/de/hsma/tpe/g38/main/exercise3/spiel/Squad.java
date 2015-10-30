@@ -26,9 +26,8 @@ public final class Squad {
 	public Squad() {
 
 		super();
-		System.out.println("Wähle einen Namen für dein Team...");
+		System.out.println("Dein Squadname lautet: ");
 
-		// String-Input via Scanner
 		this.name = scanner.nextLine();
 
 		wesen = new ArrayList<Wesen>();
