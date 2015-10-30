@@ -11,5 +11,5 @@ public interface Anfuehrer {
 	public double getBonus();
 
 	public String getBeherrschtesElement();
-	
+
 }
