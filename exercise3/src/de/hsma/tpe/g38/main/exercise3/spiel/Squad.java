@@ -3,110 +3,61 @@ package de.hsma.tpe.g38.main.exercise3.spiel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 import de.hsma.tpe.g38.main.exercise3.rassen.Wesen;
 import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Anfuehrer;
 
 public class Squad {
 
-	private static Scanner scanner = Scan.getInstance();
-
-	private String name;
 	private List<Wesen> wesen;
-
-	public String getName() {
-		return name;
-	}
+	private String name;
 
 	public List<Wesen> getWesen() {
-		return wesen;
+		return this.wesen;
 	}
 
-	public Squad() {
+	public String getName() {
+		return this.name;
+	}
 
-		super();
-		System.out.println("Dein Squadname lautet: ");
-
-		this.name = scanner.nextLine();
-
+	public Squad(String name) {
+		this.name = name;
 		wesen = new ArrayList<Wesen>();
-	}
-
-	public Squad(String squadname) {
-		this(squadname, new ArrayList<Wesen>());
-	}
-
-	public Squad(String squadname, List<Wesen> wesen) {
-
-		super();
-
-		if (squadname == null) {
-			throw new IllegalArgumentException("Squadname must not be null.");
-		}
-
-		if (wesen == null) {
-			throw new IllegalArgumentException("List must not be null.");
-		}
-
-		this.name = squadname;
-		this.wesen = wesen;
 	}
 
 	public void addWesen(Wesen wesen) {
 		this.wesen.add(wesen);
 	}
 
-	public void removeWesen(Wesen wesen) {
+	public void deleteWesen(Wesen wesen) {
 		this.wesen.remove(wesen);
 	}
 
-	public boolean hasWesen() {
+	public boolean isDead() {
 
 		if (wesen.size() == 0) {
+			return true;
+		} else {
 			return false;
 		}
-
-		return true;
 	}
 
 	public Wesen getRandomWesen() {
+		Random random = new Random();
 
-		int nummer = new Random().nextInt(wesen.size());
-
-		return wesen.get(nummer);
+		int nummerWesen = random.nextInt(wesen.size());
+		return wesen.get(nummerWesen);
 	}
 
-	public boolean exists(Anfuehrer anfuehrer) {
-
-		if (containsInstance(wesen, anfuehrer.getClass())) {
-			return true;
-		}
-
-		return false;
-	}
-
-	private <E> boolean containsInstance(List<Wesen> list, Class<? extends Anfuehrer> clazz) {
-
-		for (Wesen e : list) {
-			if (clazz.isInstance(e)) {
-				return true;
+	public boolean isAnfuehrerInSquad(Wesen wesen) {
+		if (wesen instanceof Anfuehrer) {
+			for (Wesen w : this.wesen) {
+				if (w.getClass() == wesen.getClass()) {
+					return true;
+				}
 			}
 		}
 		return false;
+
 	}
-
-	@Override
-	public String toString() {
-
-		int durchlauf = 1;
-
-		System.out.println("Name: " + name + "\n \n");
-		for (Wesen wesenInList : wesen) {
-			System.out.println(durchlauf + ". " + wesenInList.getClass().getSimpleName() + "\n");
-			durchlauf++;
-		}
-		return toString();
-	}
-
 }
