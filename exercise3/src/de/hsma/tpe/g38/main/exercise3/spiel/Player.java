@@ -83,16 +83,12 @@ public class Player {
 
 		double doneDamage = attackingWesen.attack(attackedWesen);
 
-		System.out.println(attackingWesen.getName());
-		System.out.println(" von " + this.name + " hat " + attackedWesen.getName());
-		System.out.println(" von " + attackedPlayer.getName() + " " + doneDamage + " Lebenspunkte abgezogen.");
-		System.out.println("\n");
+		System.out.println(attackingWesen.getName() + " von " + this.name + " hat " + attackedWesen.getName() + " von "
+				+ attackedPlayer.getName() + " " + doneDamage + " Lebenspunkte abgezogen.");
 
-		// Check if the attacked Wesen died
 		if (attackedWesen.isAlive() == false) {
 
-			System.out.println(attackedWesen.getName());
-			System.out.println(" von " + attackedPlayer.getName() + " ist gestorben.");
+			System.out.println(attackedWesen.getName() + " von " + attackedPlayer.getName() + " ist gestorben.");
 
 			attackedPlayer.getSquad().deleteWesen(attackedWesen);
 		} else {
