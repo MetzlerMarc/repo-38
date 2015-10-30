@@ -2,7 +2,7 @@ package de.hsma.tpe.g38.main.exercise3.spiel;
 
 import java.util.Scanner;
 
-public final class Scan {
+public class Scan {
 
 	private static Scanner INSTANCE;
 

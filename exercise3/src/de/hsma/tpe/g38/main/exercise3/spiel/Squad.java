@@ -8,9 +8,9 @@ import java.util.Scanner;
 import de.hsma.tpe.g38.main.exercise3.rassen.Wesen;
 import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Anfuehrer;
 
-public final class Squad {
+public class Squad {
 
-	private static final Scanner scanner = Scan.getInstance();
+	private static Scanner scanner = Scan.getInstance();
 
 	private String name;
 	private List<Wesen> wesen;
@@ -33,11 +33,11 @@ public final class Squad {
 		wesen = new ArrayList<Wesen>();
 	}
 
-	public Squad(final String squadname) {
+	public Squad(String squadname) {
 		this(squadname, new ArrayList<Wesen>());
 	}
 
-	public Squad(final String squadname, final List<Wesen> wesen) {
+	public Squad(String squadname, List<Wesen> wesen) {
 
 		super();
 
@@ -101,7 +101,7 @@ public final class Squad {
 
 		int durchlauf = 1;
 
-		System.out.println("Name: " + name + "\n-------------------\n");
+		System.out.println("Name: " + name + "\n \n");
 		for (Wesen wesenInList : wesen) {
 			System.out.println(durchlauf + ". " + wesenInList.getClass().getSimpleName() + "\n");
 			durchlauf++;
