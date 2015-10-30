@@ -8,31 +8,31 @@ import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Erzmagier;
 import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Farseer;
 import de.hsma.tpe.g38.main.exercise3.rassen.anfuehrer.Lich;
 
-public class Spiel {
+public class Simulation {
 
 	public static Spieler getSpieler1() {
 
 		Spieler spieler = new Spieler("Chris", "erstes Team");
-		spieler.kaufen(new Mensch());
-		spieler.kaufen(new Untoter());
-		spieler.kaufen(new Nachtelf());
-		spieler.kaufen(new Ork());
-		spieler.kaufen(new Mensch());
-		spieler.kaufen(new Untoter());
-		spieler.kaufen(new Nachtelf());
-		spieler.kaufen(new Lich());
+		spieler.kaufe(new Mensch());
+		spieler.kaufe(new Untoter());
+		spieler.kaufe(new Nachtelf());
+		spieler.kaufe(new Ork());
+		spieler.kaufe(new Mensch());
+		spieler.kaufe(new Untoter());
+		spieler.kaufe(new Nachtelf());
+		spieler.kaufe(new Lich());
 		return spieler;
 	}
 
 	public static Spieler getSpieler2() {
 
 		Spieler spieler = new Spieler("Simon", "zweites Team");
-		spieler.kaufen(new Mensch());
-		spieler.kaufen(new Untoter());
-		spieler.kaufen(new Nachtelf());
-		spieler.kaufen(new Ork());
-		spieler.kaufen(new Erzmagier());
-		spieler.kaufen(new Farseer());
+		spieler.kaufe(new Mensch());
+		spieler.kaufe(new Untoter());
+		spieler.kaufe(new Nachtelf());
+		spieler.kaufe(new Ork());
+		spieler.kaufe(new Erzmagier());
+		spieler.kaufe(new Farseer());
 
 		return spieler;
 	}
