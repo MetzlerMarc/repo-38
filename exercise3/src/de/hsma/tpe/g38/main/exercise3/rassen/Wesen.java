@@ -61,7 +61,7 @@ public class Wesen {
 		return damage;
 	}
 
-	public boolean isLebendig() {
+	public boolean isAlive() {
 
 		if (leben > 0) {
 			return true;
