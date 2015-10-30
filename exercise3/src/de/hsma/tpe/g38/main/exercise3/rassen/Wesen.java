@@ -70,4 +70,13 @@ public class Wesen {
 		}
 	}
 
+	public boolean isAnfuehrer() {
+
+		if (this instanceof Anfuehrer) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
