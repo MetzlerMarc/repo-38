@@ -3,7 +3,8 @@ package de.hsma.tpe.g38.main.exercise3.spiel;
 import de.hsma.tpe.g38.main.exercise3.rassen.Wesen;
 
 /**
- * Das ist die Klasse Player. Sie verwaltet die Spielerattribute und deren Werte.
+ * Das ist die Klasse Player. Sie verwaltet die Spielerattribute und deren
+ * Werte.
  * 
  * @author Simon Karl und Christopher Troy
  *

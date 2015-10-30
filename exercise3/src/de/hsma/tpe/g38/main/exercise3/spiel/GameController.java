@@ -1,7 +1,8 @@
 package de.hsma.tpe.g38.main.exercise3.spiel;
 
 /**
- * Das ist die Klasse GameController. Sie simuliert und steuert das rundenbasierte Spielgeschehen.
+ * Das ist die Klasse GameController. Sie simuliert und steuert das
+ * rundenbasierte Spielgeschehen.
  * 
  * @author Simon Karl und Christopher Troy
  *
@@ -25,8 +26,8 @@ public class GameController {
 	}
 
 	/**
-	 * Lässt Spieler 1 und 2 im Wechsel sich gegenseitig angreifen.
-	 * Runde erhöht sich um 1, nachdem beide ihre Attacken ausgeführt haben.
+	 * Lässt Spieler 1 und 2 im Wechsel sich gegenseitig angreifen. Runde erhöht
+	 * sich um 1, nachdem beide ihre Attacken ausgeführt haben.
 	 */
 
 	public void runGame() {
